@@ -2,8 +2,16 @@ package TamagotchiV2;
 
 import javax.swing.JOptionPane;
 
+/**
+ * 
+ * @author Tjlvt We create here the class Tiger extends from Tamagotchi
+ */
 public class Tiger extends Tamagotchi {
-
+	/**
+	 * This is the constructor of the Tiger class
+	 * 
+	 * @param name
+	 */
 	public Tiger(String name) {
 		// TODO Auto-generated constructor stub
 		super(name);
@@ -18,6 +26,9 @@ public class Tiger extends Tamagotchi {
 		this.height = 25;
 	}
 
+	/**
+	 * This method is used to ask the color of the tamagotchi the player wants
+	 */
 	public void color() {
 
 		String[] tigerColor = { "Blanche rayée noire", "Dorée", "Rousse rayée noire" };
@@ -26,6 +37,10 @@ public class Tiger extends Tamagotchi {
 				JOptionPane.QUESTION_MESSAGE, null, tigerColor, tigerColor[0]);
 	}
 
+	/**
+	 * This method is used to ask the otherColor (tail) of the tamagotchi the player
+	 * wants
+	 */
 	public void otherColor() {
 
 		String[] tigerOtherColor = { "Noire", "Blanche", "Rousse", "Grise" };
@@ -34,6 +49,9 @@ public class Tiger extends Tamagotchi {
 				JOptionPane.QUESTION_MESSAGE, null, tigerOtherColor, tigerOtherColor[0]);
 	}
 
+	/**
+	 * This method is used to do the action "dye the otherColor of the tamagotchi"
+	 */
 	public void dyeOtherColor() {
 
 		String[] tigerDyeOtherColor = { "Noires", "Blanches", "Rousses", "Grises" };
@@ -59,6 +77,9 @@ public class Tiger extends Tamagotchi {
 		}
 	}
 
+	/**
+	 * This method is used to do the action "Eat"
+	 */
 	public void eat() {
 		if (this.hungry < (this.hungryMax - 1)) { // if the value "hungry" is low enough
 

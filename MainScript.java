@@ -5,7 +5,6 @@ import java.math.RoundingMode;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
-
 /*
  * This is the mainScript for the game Tamagotchi
  */
@@ -16,21 +15,20 @@ public class MainScript {
 		String type;
 		String name;
 		Tamagotchi tamagotchi = null;
-// Here we start the method. The game is played in a new window (JOptionPanel)
+// Here we start the method. The game is played in a new window (JOptionPane)
 		JOptionPane.showMessageDialog(null,
 				"Bonjour ! Bienvenu dans le jeu du Tamagotchi\nNous allons créer ensemble votre nouveau Tamagotchi",
 				"TAMAGOTCHI", JOptionPane.PLAIN_MESSAGE, null);
 
 		String[] tamaType = { "Dragon", "Tigre", "Chien", "Chat", "Souris" };
 		type = (String) JOptionPane.showInputDialog(null, "Veuillez choisir son type puis cliquez sur Ok",
-				"TYPE DU TAMAGOTCHI", JOptionPane.QUESTION_MESSAGE, null, tamaType, tamaType[0]); // Here we ask what
-																									// kind of
-																									// tamagotchi the
-																									// player wants
+				"TYPE DU TAMAGOTCHI", JOptionPane.QUESTION_MESSAGE, null, tamaType, tamaType[0]);
+		// We ask in the window to the player what kind of Tamagotchi he wants
 
 		name = JOptionPane.showInputDialog("Veuillez choisir son nom et cliquez sur Ok");
 // We ask in the window, the name the player wants
 
+		// According to the type choosen, we declare the object
 		if (type == tamaType[2]) {
 			tamagotchi = new Dog(name);
 		} else if (type == tamaType[3]) {
@@ -48,18 +46,19 @@ public class MainScript {
 						+ " !\nNous allons définir ensemble ses caractéristiques :)",
 				"TAMAGOTCHI", JOptionPane.PLAIN_MESSAGE, null);
 
-		tamagotchi.color();
-		tamagotchi.otherColor();
+		tamagotchi.color(); // the player choose the tamagotchi's color
+		tamagotchi.otherColor();// the player choose the tamagotchi's secondary color
 
 		int lifeExpectancy = tamagotchi.getLifeExpectancy();
+		// we get the value of the tamagotchi's life expectancy for the next "for" loop.
 
 		tamagotchi.showCaracteristics(); // we show the tamagotchi's caracteristics
 
 		tamagotchi.showTamagotchi(type); // we display the tamagotchi in a new window
 
-		for (int i = 1; i <= lifeExpectancy; i++) { // This loop in used for the game's duration according to the
-													// tamagotchi's life
-													// expectancy
+		for (int i = 1; i <= lifeExpectancy; i++) {
+			// This loop in used for the game's duration according to the tamagotchi's life
+			// expectancy
 
 			JOptionPane.showMessageDialog(null, "Une nouvelle journée commence !\nJour " + i, "TAMAGOTCHI",
 					JOptionPane.PLAIN_MESSAGE, null);
@@ -79,7 +78,7 @@ public class MainScript {
 				} else {
 
 					if (j == 0) {
-						tamagotchi.showDailyStats(); // display daily caracteristics
+						tamagotchi.showDailyStats(); // display daily caracteristics everyday
 					}
 // Here we ask what the player wants to do
 					int choice;
@@ -112,8 +111,8 @@ public class MainScript {
 								"TAMAGOTCHI", JOptionPane.PLAIN_MESSAGE, null);
 						newTamagotchi.showBaby();
 					}
-					
-					if (choice ==13) { // showing caracteristics is not an action
+
+					if (choice == 13) { // showing caracteristics is not an action
 						j--;
 					}
 
@@ -135,27 +134,26 @@ public class MainScript {
 							tamagotchi.setAwake(tamagotchi.getAwakeMax());
 						}
 					}
-					if(tamagotchi.getHungry() < 4) {
-						JOptionPane.showMessageDialog(null,
-								name + " a faim. Pensez à le nourrir !!",
+					// the next 4 "if" are used to tell to the player when some vital caracteristics
+					// are very bad and recall him to do the necessary actions .
+					if (tamagotchi.getHungry() < 4) {
+						JOptionPane.showMessageDialog(null, name + " a faim. Pensez à le nourrir !!", "TAMAGOTCHI",
+								JOptionPane.PLAIN_MESSAGE, null);
+					}
+					if (tamagotchi.getNeedToilettes() > 5) {
+						JOptionPane.showMessageDialog(null, name + " a très envie d'aller aux toilettes !!",
 								"TAMAGOTCHI", JOptionPane.PLAIN_MESSAGE, null);
 					}
-					if(tamagotchi.getNeedToilettes() > 5) {
-						JOptionPane.showMessageDialog(null,
-								name + " a très envie d'aller aux toilettes !!",
+					if (tamagotchi.getAwake() < 4) {
+						JOptionPane.showMessageDialog(null, name + " est fatigué. Pensez à le faire se reposer !!",
 								"TAMAGOTCHI", JOptionPane.PLAIN_MESSAGE, null);
 					}
-					if(tamagotchi.getAwake() < 4) {
-						JOptionPane.showMessageDialog(null,
-								name + " est fatigué. Pensez à le faire se reposer !!",
-								"TAMAGOTCHI", JOptionPane.PLAIN_MESSAGE, null);
-					}
-					if(tamagotchi.getDirtLevel() > 5) {
+					if (tamagotchi.getDirtLevel() > 5) {
 						JOptionPane.showMessageDialog(null,
 								name + " commence à sentir mauvais. Pensez à lui faire prendre une douche !!",
 								"TAMAGOTCHI", JOptionPane.PLAIN_MESSAGE, null);
 					}
-					
+
 				}
 			}
 

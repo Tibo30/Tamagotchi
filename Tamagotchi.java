@@ -36,23 +36,26 @@ public abstract class Tamagotchi {
 		this.name = name;
 
 	}
-	
-	
+
+	/*
+	 * The method color is used in Tamagotchi's child classes
+	 */
 	abstract public void color();
 
-	abstract public void otherColor();
-	
 	/**
-	 * This method is used to do the action "Dye Tamagotchi's hairs"
+	 * The method otherColor is used in Tamagotchi's child classes
+	 */
+	abstract public void otherColor();
+
+	/**
+	 * The method dyeOtherColor is used in Tamagotchi's child classes
 	 */
 	abstract public void dyeOtherColor();
-	
+
 	/**
-	 * This method is used to do the action "Eat"
+	 * The method eat is used in Tamagotchi's child classes
 	 */
 	abstract public void eat();
-	
-	
 
 	/**
 	 * This method is used to set the health variable
@@ -240,7 +243,7 @@ public abstract class Tamagotchi {
 	/**
 	 * This method is used to display the Daily caracteristics
 	 */
-	
+
 	public void showDailyStats() {
 		JOptionPane.showMessageDialog(null,
 				"\nPoints de vie : " + health + "\nEspérance de vie : " + lifeExpectancy
@@ -389,6 +392,7 @@ public abstract class Tamagotchi {
 			String takebreak = (String) JOptionPane.showInputDialog(null,
 					"Veuillez choisir une action pour se reposer puis cliquez sur Ok " + name, "SE REPOSER",
 					JOptionPane.QUESTION_MESSAGE, null, tamaBreak, tamaBreak[0]);
+			// we display different messages according to the player's choice
 			if (takebreak.equals(tamaBreak[0])) {
 				JOptionPane.showMessageDialog(null, name + " va faire une sieste\n ZZZZZZZZZZZZZZZZZZZZZ", "SE REPOSER",
 						JOptionPane.PLAIN_MESSAGE, null);
@@ -409,8 +413,6 @@ public abstract class Tamagotchi {
 		}
 
 	}
-
-	
 
 	/**
 	 * This method is used to do the action "the Tamagotchi reproduces himself"
@@ -433,6 +435,7 @@ public abstract class Tamagotchi {
 		String friends = (String) JOptionPane.showInputDialog(null,
 				"Veuillez choisir une action avec vos amis puis cliquez sur Ok " + name, "VOIR SES AMIS",
 				JOptionPane.QUESTION_MESSAGE, null, tamaFriends, tamaFriends[0]);
+		// we display different messages according to the player's choice
 		if (friends.equals(tamaFriends[0])) {
 			JOptionPane.showMessageDialog(null, name + " est allé boire un coup avec ses amis !", "VOIR SES AMIS",
 					JOptionPane.PLAIN_MESSAGE, null);
@@ -524,7 +527,7 @@ public abstract class Tamagotchi {
 				JOptionPane.QUESTION_MESSAGE, null, tamaSmoke, tamaSmoke[0]);
 
 		JOptionPane.showMessageDialog(null, name + " fume " + smoke, "FUMER", JOptionPane.PLAIN_MESSAGE, null);
-
+		// we display different messages according to the player's choice
 		if (smoke.equals(tamaSmoke[0])) {
 			JOptionPane.showMessageDialog(null, "Attention ! Le tabac est mauvais pour la santé", "FUMER",
 					JOptionPane.PLAIN_MESSAGE, null);
@@ -553,7 +556,7 @@ public abstract class Tamagotchi {
 		f.setBackground(Color.red);
 		f.setUndecorated(true); // To remove external borders
 		File file = new File(type + ".PNG"); // we create a new object file in the File Class (for
-															// picture import)
+												// picture import)
 
 		ImageIcon picture = new ImageIcon(file.getAbsolutePath()); // tamagotchi picture import
 

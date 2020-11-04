@@ -2,8 +2,16 @@ package TamagotchiV2;
 
 import javax.swing.JOptionPane;
 
+/**
+ * 
+ * @author Tjlvt We create here the class Cat extends from Tamagotchi
+ */
 public class Cat extends Tamagotchi {
-
+	/**
+	 * This is the constructor of the Cat class
+	 * 
+	 * @param name
+	 */
 	public Cat(String name) {
 		// TODO Auto-generated constructor stub
 		super(name);
@@ -18,6 +26,9 @@ public class Cat extends Tamagotchi {
 		this.height = 10;
 	}
 
+	/**
+	 * This method is used to ask the color of the tamagotchi the player wants
+	 */
 	public void color() {
 
 		String[] catColor = { "Noire", "Blanche", "Rousse", "Grise" };
@@ -26,6 +37,10 @@ public class Cat extends Tamagotchi {
 				JOptionPane.QUESTION_MESSAGE, null, catColor, catColor[0]);
 	}
 
+	/**
+	 * This method is used to ask the otherColor (whiskers) of the tamagotchi the
+	 * player wants
+	 */
 	public void otherColor() {
 		String[] catOtherColor = { "Noires", "Blanches", "Rousses", "Grises" };
 		otherColor = (String) JOptionPane.showInputDialog(null,
@@ -33,6 +48,9 @@ public class Cat extends Tamagotchi {
 				JOptionPane.QUESTION_MESSAGE, null, catOtherColor, catOtherColor[0]);
 	}
 
+	/**
+	 * This method is used to do the action "dye the otherColor of the tamagotchi"
+	 */
 	public void dyeOtherColor() {
 
 		String[] catDyeOtherColor = { "Noires", "Blanches", "Rousses", "Grises" };
@@ -46,7 +64,7 @@ public class Cat extends Tamagotchi {
 					JOptionPane.PLAIN_MESSAGE, null);
 		} else {
 			if (newOtherColor.equals(this.otherColor)) { // If the user choose the same
-																						// color
+															// color
 				JOptionPane.showMessageDialog(null,
 						"Les moustaches de " + name + " sont déjà de couleur " + this.otherColor,
 						"TEINDRE LES MOUSTACHES", JOptionPane.PLAIN_MESSAGE, null);
@@ -61,15 +79,18 @@ public class Cat extends Tamagotchi {
 		}
 	}
 
+	/**
+	 * This method is used to do the action "Eat"
+	 */
 	public void eat() {
 		if (this.hungry < (this.hungryMax - 1)) { // if the value "hungry" is low enough
-			
+
 			String[] catFood = { "Souris", "Croquettes", "Patée" };
 			String food = (String) JOptionPane.showInputDialog(null,
-					"Veuillez choisir le menu d'aujourd'hui puis cliquez sur Ok", "REPAS",
-					JOptionPane.QUESTION_MESSAGE, null, catFood, catFood[0]);
-			JOptionPane.showMessageDialog(null, "Miam " + this.name + " a bien mangé !",
-					"REPAS", JOptionPane.PLAIN_MESSAGE, null);
+					"Veuillez choisir le menu d'aujourd'hui puis cliquez sur Ok", "REPAS", JOptionPane.QUESTION_MESSAGE,
+					null, catFood, catFood[0]);
+			JOptionPane.showMessageDialog(null, "Miam " + this.name + " a bien mangé !", "REPAS",
+					JOptionPane.PLAIN_MESSAGE, null);
 			setAwake(this.awake - 1); // we set new values of the variables according to the action
 			setNeedToilettes(this.needToilettes + 2);
 			setDirtLevel(this.dirtLevel + 1);
