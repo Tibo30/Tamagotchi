@@ -24,6 +24,7 @@ public class Mouse extends Tamagotchi {
 		this.hungry = 6;
 		this.hungryMax = 6;
 		this.height = 2;
+		this.secondaryColor = "Couleur des moustaches : ";
 	}
 
 	/**
@@ -108,5 +109,4 @@ public class Mouse extends Tamagotchi {
 					null);
 		}
 	}
-
 }

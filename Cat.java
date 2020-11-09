@@ -24,6 +24,7 @@ public class Cat extends Tamagotchi {
 		this.hungry = 8;
 		this.hungryMax = 8;
 		this.height = 10;
+		this.secondaryColor = "Couleur des moustaches : ";
 	}
 
 	/**
@@ -101,5 +102,4 @@ public class Cat extends Tamagotchi {
 					null);
 		}
 	}
-
 }

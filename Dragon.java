@@ -24,6 +24,7 @@ public class Dragon extends Tamagotchi {
 		this.hungry = 7;
 		this.hungryMax = 7;
 		this.height = 50;
+		this.secondaryColor = "Couleur des écailles : ";
 	}
 
 	/**

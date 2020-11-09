@@ -14,6 +14,7 @@ public abstract class Tamagotchi {
 	protected String type;
 	protected String color;
 	protected String otherColor;
+	protected String secondaryColor;
 	protected int health;
 	protected int healthMax;
 	protected double height;
@@ -34,7 +35,6 @@ public abstract class Tamagotchi {
 	public Tamagotchi(String name) {
 		// TODO Auto-generated constructor stub
 		this.name = name;
-
 	}
 
 	/*
@@ -56,6 +56,22 @@ public abstract class Tamagotchi {
 	 * The method eat is used in Tamagotchi's child classes
 	 */
 	abstract public void eat();
+
+	/**
+	 * This method is used to set the color variable
+	 * @param color
+	 */
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	/**
+	 * This method is used to set the otherColor variable
+	 * @param otherColor
+	 */
+	public void setOtherColor(String otherColor) {
+		this.otherColor = otherColor;
+	}
 
 	/**
 	 * This method is used to set the health variable
@@ -132,6 +148,22 @@ public abstract class Tamagotchi {
 		this.awake = awake;
 	}
 
+	/**
+	 * This method is used to return the color variable
+	 * @return
+	 */
+	public String getColor() {
+		return this.color;
+	}
+	
+	/**
+	 * This method is used to return the otherColor variable
+	 * @return
+	 */
+	public String getOtherColor() {
+		return this.otherColor;
+	}
+	
 	/**
 	 * This method is used to return the lifeExpectancy variable
 	 * 
@@ -241,6 +273,14 @@ public abstract class Tamagotchi {
 	}
 
 	/**
+	 * This method is used to return the type of the secondaryColor variable
+	 * @return
+	 */
+	public String getSecondaryColor() {
+		return this.secondaryColor;
+	}
+	
+	/**
 	 * This method is used to display the Daily caracteristics
 	 */
 
@@ -261,7 +301,7 @@ public abstract class Tamagotchi {
 	public void showCaracteristics() {
 		JOptionPane.showMessageDialog(null,
 				"Les caractéristiques de votre tamagotchi sont les suivantes :\nNom : " + name + "\nType : " + type
-						+ "\nCouleur : " + color + "\nCouleur de cheveux : " + otherColor + "\nTaille : " + height
+						+ "\nCouleur : " + color + "\n" + getSecondaryColor() + otherColor + "\nTaille : " + height
 						+ " cm" + "\nPoints de vie : " + health + "\nEspérance de vie : " + lifeExpectancy
 						+ (lifeExpectancy > 1 ? " tours" : " tour") + "\nEveil : " + awake + "\nFaim : " + hungry
 						+ "\nNiveau de saleté : " + dirtLevel + "\nEnvie d'aller aux toilettes : " + needToilettes
@@ -288,7 +328,7 @@ public abstract class Tamagotchi {
 	public void showBaby() {
 		JOptionPane.showMessageDialog(null,
 				"\nVoici les caractéristiques de votre bébé tamagotchi : " + "\nNom : Bébé" + "\nType : " + type
-						+ "\nCouleur : " + color + "\nCouleur de cheveux : " + otherColor,
+						+ "\nCouleur : " + color + "\n"+ getSecondaryColor() + otherColor,
 				"BEBE TAMAGOTCHI", JOptionPane.PLAIN_MESSAGE, null);
 	}
 

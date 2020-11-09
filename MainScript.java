@@ -97,14 +97,24 @@ public class MainScript {
 						Tamagotchi newTamagotchi = null;
 						if (type == tamaType[2]) {
 							newTamagotchi = new Dog("bébé");
+							newTamagotchi.setColor(tamagotchi.getColor());
+							newTamagotchi.setOtherColor(tamagotchi.getOtherColor());
 						} else if (type == tamaType[3]) {
 							newTamagotchi = new Cat("bébé");
+							newTamagotchi.setColor(tamagotchi.getColor());
+							newTamagotchi.setOtherColor(tamagotchi.getOtherColor());
 						} else if (type == tamaType[0]) {
 							newTamagotchi = new Dragon("bébé");
+							newTamagotchi.setColor(tamagotchi.getColor());
+							newTamagotchi.setOtherColor(tamagotchi.getOtherColor());
 						} else if (type == tamaType[4]) {
 							newTamagotchi = new Mouse("bébé");
+							newTamagotchi.setColor(tamagotchi.getColor());
+							newTamagotchi.setOtherColor(tamagotchi.getOtherColor());
 						} else if (type == tamaType[1]) {
 							newTamagotchi = new Tiger("bébé");
+							newTamagotchi.setColor(tamagotchi.getColor());
+							newTamagotchi.setOtherColor(tamagotchi.getOtherColor());
 						}
 
 						JOptionPane.showMessageDialog(null, "Félicitations ! " + name + " vient d'avoir un bébé !",

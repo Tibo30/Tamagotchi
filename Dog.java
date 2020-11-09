@@ -24,6 +24,7 @@ public class Dog extends Tamagotchi {
 		this.hungry = 8;
 		this.hungryMax = 8;
 		this.height = 15;
+		this.secondaryColor = "Couleur de la queue : ";
 	}
 
 	/**
@@ -97,5 +98,4 @@ public class Dog extends Tamagotchi {
 					null);
 		}
 	}
-
 }

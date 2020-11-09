@@ -24,6 +24,7 @@ public class Tiger extends Tamagotchi {
 		this.hungry = 7;
 		this.hungryMax = 7;
 		this.height = 25;
+		this.secondaryColor = "Couleur de la queue : ";
 	}
 
 	/**
